@@ -1,0 +1,20 @@
+name: Docker Image Jupyter+redis
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build ./docker --file Dockerfile --tag torresmasdeu/ltm_jupyter
+    - name: Push the image to DockerHub
+      run: docker login -u torresmasdeu -p${{ secrets.DOCKER_TOKEN }} && docker push torresmasdeu/ltm_jupyter
