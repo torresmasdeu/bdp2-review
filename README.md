@@ -81,7 +81,7 @@ cd bdp2-review/
 ```
 
 In this directory, we want to add two directories, to have this structure:
-- `.`: main directory, where we will put the `README.md`file and the `docker-compose.yml` file (step 2)
+- `.`: main directory, where we will put the `README.md` file and the `docker-compose.yml` file (step 2)
 - `./docker`: where we will write and save the `Dockerfile`to create the custom image
 - `./work`: where we will store the Jupyter notebooks
 
